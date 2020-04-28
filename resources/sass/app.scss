@@ -1,0 +1,157 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import '~summernote/dist/summernote-bs4.css';
+
+.btn-primary{
+    background-color: rgb(0, 0, 0);
+    color: cyan;
+    font-size: 18px;
+    border-color: darkblue;
+}
+
+.btn-primary:hover{
+    background-color: rgb(44, 44, 44);
+    color: cyan;
+    font-size: 18px;
+    border-color: darkblue;
+    text-align: center;
+}
+
+.btn-default{
+    background-color: rgb(255, 255, 255);
+    font-size: 18px;
+    border-color: rgb(189, 189, 189);
+}
+
+.btn-default:hover{
+    background-color: rgb(44, 44, 44);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    border-color: rgb(189, 189, 189);
+}
+
+.navbar{
+    background-color: rgb(41, 41, 41);
+    color: cyan;
+}
+
+.pagination{
+    background-color: rgb(41, 41, 41);
+    color: cyan;
+}
+
+body{
+    color: cyan;
+    background-color: rgb(26, 26, 26);
+}
+
+.btn-success{
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 255, 106);
+    font-size: 18px;
+    border-color: rgb(0, 139, 0);
+}
+
+.btn-success:hover{
+    background-color: rgb(44, 44, 44);
+    color: rgb(0, 255, 106);
+    font-size: 18px;
+    border-color: rgb(0, 139, 0);
+}
+
+.btn-danger{
+    background-color: rgb(0, 0, 0);
+    color: rgb(214, 0, 0);
+    font-size: 18px;
+    border-color: rgb(139, 67, 0);
+}
+
+.btn-danger:hover{
+    background-color: rgb(44, 44, 44);
+    color: rgb(214, 0, 0);
+    font-size: 18px;
+    border-color: rgb(139, 67, 0);
+}
+
+.posts{
+    .post{
+        h2.post-title{
+            a{
+                color: cyan;
+                margin-bottom: 0;
+            }
+        }
+        i.post-published-at{
+            display: block;
+            text-align: right;
+        }
+
+    }
+}
+
+.topaligner{
+    margin-top: -24px;
+}
+
+.thicc{
+    font-size: 50px;
+}
+
+.titelos{
+    text-align: center;
+    color: rgb(20, 255, 196);
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+}
+
+.textos{
+    text-align: left;
+    color: rgb(203, 235, 215);
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+}
+
+.textos2{
+    text-align: right;
+    bottom: 0;
+    color: rgb(53, 248, 128);
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+}
+
+.textos3{
+    text-align: left;
+    bottom: 0;
+    color: rgb(47, 189, 255);
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+}
+
+.post-single{
+    .single-post{
+        p.post-content{
+            font-size: 20px;
+        }
+    }
+}
+
+.single-post-comment{
+
+    p.comment-title{
+
+        font-size: 24px;
+
+        font-style: italic;
+
+    }
+
+    #btn-comment-login{
+
+        margin-top: -7px;
+
+    }
+
+}
