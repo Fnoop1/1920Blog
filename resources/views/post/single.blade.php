@@ -39,41 +39,23 @@
                     </form>
 
                     @endif
-
                     <a href="/posts/{{$post->id}}/edit" class="btn btn-default">Bewerk artikel</a>
-
                     @endauth
-
                     <div class="comments">
-
                         @foreach($post->comments as $comment)
-
                             <div class="comment">
-
                                 <div class="comment-image">
-
                                     <img src="/images/user.png">
-
                                 </div>
-
                                 <div class="comment-details">
-
                                     <i class="comment-info">Auteur opmerking: {{$comment->author->name}} at {{$comment->created_at}}</i>
-
                                     <p class="comment-content">{{$comment->content}}</p>
-
                                     @auth()
-
                                         <button class="btn btn-danger comment-delete" onclick="event.preventDefault(); document.getElementById('delete-comment-form').submit();">
-
                                             Verwijder je opmerking
-
                                         </button>
-
                                         <form id="delete-comment-form" action="/comment/{{$comment->id}}" method="post" style="display: none;">
-
                                             @csrf
-
                                             @method('delete')
 
                                         </form>

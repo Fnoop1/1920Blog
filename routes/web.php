@@ -55,3 +55,7 @@ Route::put('/posts/{id}', 'PostController@update')->name('post.update')->middlew
 Route::delete('/posts/{id}', 'PostController@destroy')->name('post.destroy')->middleware('auth');
 
 Route::post('/posts/{id}/publish', 'PostController@publish')->name('post.publish')->middleware('auth');
+
+Route::post('/posts/{postid}/comment', 'CommentController@store')->name('comment.store')->middleware('auth');
+
+Route::delete('/comment/{id}', 'CommentController@destroy')->name('comment.destroy')->middleware('auth');
