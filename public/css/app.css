@@ -11659,6 +11659,7 @@ a.text-dark:focus {
   color: cyan;
   font-size: 18px;
   border-color: darkblue;
+  text-align: center;
 }
 
 .btn-default {
@@ -11763,5 +11764,14 @@ body {
 
 .post-single .single-post p.post-content {
   font-size: 20px;
+}
+
+.single-post-comment p.comment-title {
+  font-size: 24px;
+  font-style: italic;
+}
+
+.single-post-comment #btn-comment-login {
+  margin-top: -7px;
 }
 
