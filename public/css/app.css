@@ -11762,6 +11762,14 @@ body {
   font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
 }
 
+.commentos {
+  text-align: left;
+  color: #cbebd7;
+  font-size: 20px;
+  font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+  display: block;
+}
+
 .post-single .single-post p.post-content {
   font-size: 20px;
 }

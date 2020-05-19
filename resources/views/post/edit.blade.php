@@ -1,12 +1,12 @@
+@can('delete',$post)
+
 @extends('layouts.app')
 
 @section('stylesheets')
 
 @section('content')
 
-
 <div class="container">
-    
 
     <div class="row justify-content-center">
 
@@ -52,7 +52,7 @@
                 <button type="submit" class="btn btn-primary">Opslaan</button>
 
             </form>
-
+            @can('delete',$post)
             <button class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('delete-post-form').submit();">
 
                 Verwijder artikel
@@ -66,35 +66,11 @@
                 @method('delete')
 
             </form>
+            @endcan
 
         </div>
 
     </div>
 
 </div>
-
 @endsection
-
-
-
-<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-    <a class="dropdown-item" href="{{ route('logout') }}"
-
-       onclick="event.preventDefault();
-
-                     document.getElementById('logout-form').submit();">
-
-        {{ __('Logout') }}
-
-    </a>
-
-
-
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-
-        @csrf
-
-    </form>
-
-</div>

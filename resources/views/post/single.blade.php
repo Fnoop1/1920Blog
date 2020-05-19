@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-
-
 @section('content')
 
     <div class="container">
@@ -16,22 +14,22 @@
 
                 <div class="single-post">
 
-                    <div class="textos"><h3><p class="post-content">{!! $post->content !!}</p></div>
+                    <div class="textos"><h3><p class="post-content">{!! $post->content !!}</p></h3></div>
 
                     <hr/>
 
-                    <h3><i>Geplaatst op: {{ $post->published_at ?? "Nog niet gepubliceerd" }}</h3></i>
+                    <h5><i><div class= "textos3">Geplaatst op: {{ $post->published_at ?? "Nog niet gepubliceerd" }}</h5></i>
 
                     @auth()
 
-                    @if(!$post->published_at)
+                    @if(!$post->published_at && Auth::user()->can('publish',$post))
 
                     <button class="btn btn-success" onclick="event.preventDefault(); document.getElementById('publish-post-form').submit();">
 
                         Publish post
 
                     </button>
-
+                    
                     <form id="publish-post-form" action="/posts/{{$post->id}}/publish" method="POST" style="display:none;">
 
                         @csrf;
@@ -39,18 +37,19 @@
                     </form>
 
                     @endif
+                    @can('update', $post)
                     <a href="/posts/{{$post->id}}/edit" class="btn btn-default">Bewerk artikel</a>
+                    @endcan
                     @endauth
                     <div class="comments">
                         @foreach($post->comments as $comment)
                             <div class="comment">
-                                <div class="comment-image">
-                                    <img src="/images/user.png">
-                                </div>
+                                <br/>
                                 <div class="comment-details">
-                                    <i class="comment-info">Auteur opmerking: {{$comment->author->name}} at {{$comment->created_at}}</i>
-                                    <p class="comment-content">{{$comment->content}}</p>
-                                    @auth()
+                                    <i class="comment-info"><h5><div class="textos3">Opmerking: {{$comment->author->name}} at {{$comment->created_at}}</h5></i></div>
+                                    <p class="comment-content"><div class="commentos">{{$comment->content}}</p></div>
+                                    @can('delete',$comment)
+ 
                                         <button class="btn btn-danger comment-delete" onclick="event.preventDefault(); document.getElementById('delete-comment-form').submit();">
                                             Verwijder je opmerking
                                         </button>
@@ -59,20 +58,24 @@
                                             @method('delete')
 
                                         </form>
-
-                                    @endauth
-
+                                        @endcan
+                                        
                                 </div>
-
+                                
                             </div>
-
                         @endforeach
 
                     </div>
 
                 </div>
 
-                <hr>
+            </div>
+        </div>
+    </div>
+
+            <hr>
+
+            <div class="container">
 
                 <div class="single-post-comment">
 
@@ -107,13 +110,5 @@
                         </div>
 
                     @endauth
-
-                </div>
-
-            </div>
-
-        </div>
-        
-    </div>
 
 @endsection

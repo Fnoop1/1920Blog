@@ -48,14 +48,14 @@ Route::get('/posts/create', 'PostController@create')->name('post.create')->middl
 
 Route::post('/posts', 'PostController@store')->name('post.store')->middleware('auth');
 
-Route::get('/posts/{id}/edit', 'PostController@edit')->name('post.edit')->middleware('auth');
+Route::get('/posts/{post}/edit', 'PostController@edit')->name('post.edit')->middleware('can:update,post');
 
-Route::put('/posts/{id}', 'PostController@update')->name('post.update')->middleware('auth');
+Route::put('/posts/{post}', 'PostController@update')->name('post.update')->middleware('can:update,post');
 
-Route::delete('/posts/{id}', 'PostController@destroy')->name('post.destroy')->middleware('auth');
+Route::delete('/posts/{post}', 'PostController@destroy')->name('post.destroy')->middleware('can:delete,post');
 
-Route::post('/posts/{id}/publish', 'PostController@publish')->name('post.publish')->middleware('auth');
+Route::post('/posts/{id}/publish', 'PostController@publish')->name('post.publish')->middleware('can:publish,post');
 
 Route::post('/posts/{postid}/comment', 'CommentController@store')->name('comment.store')->middleware('auth');
 
-Route::delete('/comment/{id}', 'CommentController@destroy')->name('comment.destroy')->middleware('auth');
+Route::delete('/comment/{comment}', 'CommentController@destroy')->name('comment.destroy')->middleware('can:delete,comment');
