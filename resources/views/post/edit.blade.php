@@ -1,5 +1,3 @@
-@can('delete',$post)
-
 @extends('layouts.app')
 
 @section('stylesheets')
